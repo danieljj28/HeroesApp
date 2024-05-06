@@ -1,3 +1,4 @@
+import { Publisher } from './../../interfaces/hero.interface';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class NewHeroPageComponent {
+
+  public publishers = [
+    { id: 'DC Comics', value: 'DC - Comics' },
+    { id: 'Marvel Comics', value: 'Marvel - Comics' }
+  ]
 
 }
