@@ -10,22 +10,25 @@
 <div *ngIf="hero; else divLoading" class="mt-2 grid">
 
   <mat-card class="col-12 sm:col-6">
-    <mat-card-header class="p-0">
+    <mat-card-header [ngStyle]="{'align-self': 'center'}">
       <mat-card-title>{{ hero.alter_ego }}</mat-card-title>
       <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
     </mat-card-header>
 
-    <img class="h-25rem mt-2" mat-card-image [src]="hero | heroImage" [alt]="hero.superhero">
+    <mat-divider class="my-3"></mat-divider>
+
+    <img class="mt-2" mat-card-image [src]="hero | heroImage" [alt]="hero.superhero">
 
   </mat-card>
 
   <mat-card class="col-12 sm:col-6">
 
-    <mat-card-header>
+    <mat-card-header [ngStyle]="{'align-self': 'center'}">
       <mat-card-title>Información</mat-card-title>
       <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
     </mat-card-header>
 
+    <mat-divider class="my-3"></mat-divider>
     <mat-card-content>
       <mat-list>
         <mat-list-item>{{ hero.first_appearance }}</mat-list-item>

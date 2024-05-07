@@ -15,6 +15,7 @@ import { NewHeroPageComponent } from './pages/new-hero-page/new-hero-page.compon
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 import { CardComponent } from './components/card/card.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 
@@ -27,6 +28,7 @@ import { CardComponent } from './components/card/card.component';
     NewHeroPageComponent,
     SearchPageComponent,
     CardComponent,
+    ConfirmDialogComponent,
     heroImagePipe
   ],
   imports: [

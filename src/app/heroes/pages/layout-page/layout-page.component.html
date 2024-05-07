@@ -1,4 +1,4 @@
-<mat-sidenav-container fullscreen>
+<mat-sidenav-container>
 
   <mat-sidenav #sidenav mode="push" [ngStyle]="{width: '250px'}">
 
@@ -15,7 +15,7 @@
       [routerLink]="item.url"
       (click)="sidenav.toggle()">
         <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-        <{{ item.label }}>
+        {{ item.label }}
       </mat-list-item>
     </mat-nav-list>
 
