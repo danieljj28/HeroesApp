@@ -7,42 +7,56 @@
 </ng-template>
 
 
-<div *ngIf="hero; else divLoading" class="mt-2 grid">
+<div *ngIf="hero; else divLoading" class="card-grid mt-4">
 
-  <mat-card class="col-12 sm:col-6">
-    <mat-card-header [ngStyle]="{'align-self': 'center'}">
-      <mat-card-title>{{ hero.alter_ego }}</mat-card-title>
-      <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
-    </mat-card-header>
+  <header class="card-header text-center">
+    <h1>{{ hero.superhero }}</h1>
+    <h3>{{ hero.alter_ego }}</h3>
+  </header>
 
-    <mat-divider class="my-3"></mat-divider>
+  <mat-divider></mat-divider>
 
-    <img class="mt-2" mat-card-image [src]="hero | heroImage" [alt]="hero.superhero">
+  <main class="card-main">
 
-  </mat-card>
+    <section class="section-info">
+      <h4 class="text-center">INFORMACIÓN</h4>
+      <mat-divider></mat-divider>
+      <div class="section-info__content">
 
-  <mat-card class="col-12 sm:col-6">
+        <div class="content-c">
+          <h5>PERSONAJES</h5>
+          <div class="content-c__container">
+            <span class="sp-ch" *ngFor="let name of hero.characters.split(',') | slice:0:3">
+              {{ name }}
+            </span>
+          </div>
+        </div>
 
-    <mat-card-header [ngStyle]="{'align-self': 'center'}">
-      <mat-card-title>Información</mat-card-title>
-      <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
-    </mat-card-header>
+        <div class="content-f">
+          <h5>PRIMERA APARICIÓN</h5>
+          <span class="sp-ch">
+            {{ hero.first_appearance }}
+          </span>
+        </div>
 
-    <mat-divider class="my-3"></mat-divider>
-    <mat-card-content>
-      <mat-list>
-        <mat-list-item>{{ hero.first_appearance }}</mat-list-item>
-        <mat-list-item>{{ hero.characters }}</mat-list-item>
-        <mat-list-item>{{ hero.publisher }}</mat-list-item>
-        <mat-list-item>{{ hero.alter_ego }}</mat-list-item>
-      </mat-list>
-    </mat-card-content>
+        <div class="content-cr">
+          <h5>CREADOR</h5>
+          <span class="sp-ch">
+            {{ hero.publisher }}
+          </span>
+        </div>
 
-    <button
-      mat-button
-      color="warn"
-      (click)="goBack()">
-      Regresar
-    </button>
-  </mat-card>
+      </div>
+    </section>
+
+    <section class="section-img">
+      <img [src]="hero | heroImage">
+    </section>
+
+  </main>
+
+  <footer class="card-footer text-center">
+    <button (click)="goBack()" mat-button color="primary"> REGRESAR </button>
+  </footer>
+
 </div>

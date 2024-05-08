@@ -7,11 +7,11 @@ import { Hero } from '../../interfaces/hero.interface';
 @Component({
   selector: 'app-hero-page',
   templateUrl: './hero-page.component.html',
-  styles: ``
+  styleUrl: './hero-page.component.css'
 })
 export class HeroPageComponent implements OnInit{
 
-  public hero?: Hero;
+  public hero!: Hero;
 
   constructor (
     private heroService: HeroService,
@@ -28,6 +28,7 @@ export class HeroPageComponent implements OnInit{
         this.hero = hero;
         return;
       })
+
   }
 
   public goBack(): void {
