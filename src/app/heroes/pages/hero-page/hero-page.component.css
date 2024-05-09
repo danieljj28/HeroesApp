@@ -47,10 +47,15 @@ h1,h2,h3,h4,h5,h6{
   margin-top: 10px;
 }
 
+.section-img{
+  display: grid;
+  justify-items: center;
+}
+
 img{
   margin-top: 33px;
-  height: 400px;
-  width: 100%;
+  height: 500px;
+  width: 80%;
 }
 
 h5{
